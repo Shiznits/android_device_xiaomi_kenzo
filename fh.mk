@@ -18,19 +18,24 @@
 
 $(call inherit-product, device/xiaomi/kenzo/full_kenzo.mk)
 
-# Inherit some common Cardinal-AOSP stuff.
-$(call inherit-product, vendor/cardinal/common.mk)
+# Inherit some common Firehound stuff.
+$(call inherit-product, vendor/fh/config/common_full_phone.mk)
 
 # Set those variables here to overwrite the inherited values.
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := kenzo
-PRODUCT_NAME := cardinal_kenzo
+PRODUCT_NAME := fh_kenzo
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Redmi Note 3
 TARGET_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+#Official
+DISABLE_CNM := true
+FH_OFFICIAL := true
+FH_RELEASE := true
 
 # Use the latest approved GMS identifiers unless running a signed build
 ifneq ($(SIGN_BUILD),true)
