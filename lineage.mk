@@ -21,6 +21,12 @@ $(call inherit-product, device/xiaomi/kenzo/full_kenzo.mk)
 # Inherit some common lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# PE Gapps
+TARGET_ARCH := arm64
+TARGET_DENSITY := xxhdpi
+TARGET_INCLUDE_ARCORE := true
+$(call inherit-product-if-exists, vendor/gapps/config.mk)
+
 # Set those variables here to overwrite the inherited values.
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
